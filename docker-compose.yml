@@ -6,6 +6,8 @@ volumes:
   node_red_data:
   stack-blob:
   stack-data:
+  flow-data:
+  log-data:
 
 services:
 
