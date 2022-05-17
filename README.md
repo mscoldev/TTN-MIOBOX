@@ -55,7 +55,7 @@ While the device boots (it will eventually show up in the Balena dashboard) we w
 - Clone this repository to your local workstation. Don't forget to update the submodules.
 ```
 cd ~/workspace
-git clone https://github.com/xoseperez/balena-tts-lns.git
+git clone https://github.com/mscoldev/TTN-MIOBOX.git
 cd balena-tts-lns
 git submodule update --init
 ```
