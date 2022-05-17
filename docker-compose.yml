@@ -27,15 +27,13 @@ services:
       io.balena.features.supervisor-api: '1'
       io.balena.features.balena-api: '1'
       
-      node-red:
+  node-red:
     image: nodered/node-red:2.2.2-12
     restart: unless-stopped
     volumes:
       - 'node_red_data:/data'
     ports:
-      - "127.0.0.1:1880:1880"
-
-
+      - "1880:1880"
 
   redis:
     image: redis:6.2.4-alpine3.13
@@ -72,7 +70,7 @@ services:
       - "80:1885"
       - "443:8885"
     
-      
+     
       - "1881:1881"
       - "1882:1882"
       - "1883:1883"
