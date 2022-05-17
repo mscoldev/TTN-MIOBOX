@@ -32,6 +32,13 @@ services:
     volumes:
       - 'node_red_data:/data'
     privileged: true
+    network_mode: host
+    labels:
+      io.balena.features.supervisor-api: '1'
+    environment:
+      - "USERNAME=balena"
+      - "PASSWORD=balena"
+      - "ENCRIPTION_KEY=balena"
     restart: unless-stopped
     ports:
       - '1880:1880'
@@ -40,9 +47,19 @@ services:
     devices:
       - "/dev/i2c-1:/dev/i2c-1"
       - "/dev/mem:/dev/mem"
+      - "/dev/gpiomem:/dev/gpiomem"
       - "/dev/ttyACM0:/dev/ttyACM0"
     cap_add:
       - SYS_RAWIO
+
+  gpiod:
+      image: corbosman/pigpiod
+      privileged: true
+      restart: unless-stopped
+      ports:
+      - '127.0.0.1:8888:8888'
+  
+  
 
      
   redis:

@@ -21,6 +21,10 @@ assets:
         https://raw.githubusercontent.com/xoseperez/balena-tts-lns/master/resources/logo_small.png
 data:
   applicationEnvironmentVariables:
+    - PORT: 1880
+    - USERNAME: balena
+    - PASSWORD: balena
+    - ENCRIPTION_KEY: balena
     - TTS_SERVER_NAME: The Things Stack
     - TTS_ADMIN_EMAIL: admin@thethings.example.com
     - TTS_NOREPLY_EMAIL: noreply@thethings.example.com
